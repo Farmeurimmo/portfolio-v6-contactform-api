@@ -27,7 +27,7 @@ jobs:
         with:
           distribution: temurin
           java-version: "27"
-          cache: maven
+          cache: gradle
 
       - name: Set version
         run: |
@@ -39,15 +39,12 @@ jobs:
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Verify and build application
-        run: >
-          mvn -B --no-transfer-progress verify
-          -Dsentry.skip=true
-          -Drevision=${{ env.VERSION }}
+        run: ./gradlew build --no-daemon -Pversion=${{ env.VERSION }}
 
       - name: Prepare Docker artifact
         run: |
           mkdir -p docker
-          cp target/*.jar docker/app.jar
+          find build/libs -name '*.jar' ! -name '*-plain.jar' -exec cp {} docker/app.jar \;
 
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v4
