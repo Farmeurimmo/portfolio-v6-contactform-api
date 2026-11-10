@@ -1,0 +1,11 @@
+services:
+  portfolio-v6-formcontact-api:
+    image: farmeurimmo/portfolio-v6-contactform-api
+    container_name: portfolio-v6-formcontact-api
+    restart: always
+    networks:
+      - cloudflared
+
+networks:
+  cloudflared:
+    external: true
