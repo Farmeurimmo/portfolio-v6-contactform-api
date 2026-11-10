@@ -8,4 +8,8 @@ springdoc:
   api-docs:
     enabled: true
 
-
+management:
+  influx:
+    metrics:
+      export:
+        enabled: false
