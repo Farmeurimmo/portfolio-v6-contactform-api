@@ -67,3 +67,6 @@ jobs:
             ${{ env.IMAGE }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Trigger Portainer deployment
+        run: curl -fsS -X POST "${{ secrets.WEBHOOK_URL }}"
