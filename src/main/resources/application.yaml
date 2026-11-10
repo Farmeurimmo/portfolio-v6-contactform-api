@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: portfolio-v6-contact-api
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+
+
