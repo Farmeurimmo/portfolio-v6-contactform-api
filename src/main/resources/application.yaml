@@ -8,6 +8,18 @@ springdoc:
   api-docs:
     enabled: true
 
+cors:
+  dev: ${CORS_DEV_ENABLED:false}
+
+turnstile:
+  secret-key: ${TURNSTILE_API_KEY:}
+
+app:
+  telegram:
+    bot:
+      token: ${TELEGRAM_BOT_TOKEN:}
+      chat-id: ${TELEGRAM_BOT_CHAT_ID:}
+
 management:
   influx:
     metrics:

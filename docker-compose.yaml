@@ -11,6 +11,9 @@ services:
       - INFLUX_METRICS_ORG=${INFLUX_METRICS_ORG:-portfolio-v6-contactform-api}
       - INFLUX_METRICS_URI=${INFLUX_METRICS_URI:-http://localhost:8086}
       - INFLUX_METRICS_TOKEN=${INFLUX_METRICS_TOKEN:-}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_BOT_CHAT_ID=${TELEGRAM_BOT_CHAT_ID:-}
+      - TURNSTILE_API_KEY=${TURNSTILE_API_KEY:-}
 
 networks:
   cloudflared:
