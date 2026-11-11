@@ -12,4 +12,8 @@ management:
   influx:
     metrics:
       export:
-        enabled: false
+        enabled: ${INFLUX_METRICS_ENABLED:false}
+        bucket: ${INFLUX_METRICS_BUCKET:portfolio-v6-contactform-api}
+        org: ${INFLUX_METRICS_ORG:portfolio-v6-contactform-api}
+        uri: ${INFLUX_METRICS_URI:http://localhost:8086}
+        token: ${INFLUX_METRICS_TOKEN:}
