@@ -6,11 +6,11 @@ services:
     networks:
       - cloudflared
     environment:
-      - INFLUX_METRICS_ENABLED=${INFLUX_METRICS_ENABLED:false}
-      - INFLUX_METRICS_BUCKET=${INFLUX_METRICS_BUCKET:portfolio-v6-contactform-api}
-      - INFLUX_METRICS_ORG=${INFLUX_METRICS_ORG:portfolio-v6-contactform-api}
-      - INFLUX_METRICS_URI=${INFLUX_METRICS_URI:http://localhost:8086}
-      - INFLUX_METRICS_TOKEN=${INFLUX_METRICS_TOKEN:}
+      - INFLUX_METRICS_ENABLED=${INFLUX_METRICS_ENABLED:-false}
+      - INFLUX_METRICS_BUCKET=${INFLUX_METRICS_BUCKET:-portfolio-v6-contactform-api}
+      - INFLUX_METRICS_ORG=${INFLUX_METRICS_ORG:-portfolio-v6-contactform-api}
+      - INFLUX_METRICS_URI=${INFLUX_METRICS_URI:-http://localhost:8086}
+      - INFLUX_METRICS_TOKEN=${INFLUX_METRICS_TOKEN:-}
 
 networks:
   cloudflared:
