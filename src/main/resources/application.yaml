@@ -17,3 +17,4 @@ management:
         org: ${INFLUX_METRICS_ORG:portfolio-v6-contactform-api}
         uri: ${INFLUX_METRICS_URI:http://localhost:8086}
         token: ${INFLUX_METRICS_TOKEN:}
+        step: 10s
